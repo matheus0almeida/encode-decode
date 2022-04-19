@@ -20,7 +20,7 @@ st.title('Criptografar e Descriptografar')
 
 option = st.radio("Selecione a opção: ",('Criptografar', 'Descriptografar'))
 
-key = st.text_input('Chave', '')
+key = st.text_input('Senha', '')
 string = st.text_input('Texto', '')
 
 if st.button('Rodar'):
