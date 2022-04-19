@@ -26,7 +26,7 @@ st.set_page_config(
 
 st.title('Criptografar e Descriptografar')
 
-with st.expander("Cripitografia Simples - Menos Seguro"):
+with st.expander("Cripitografia Senha definida - Menos Seguro"):
 
     option = st.radio("Selecione a opção: ",('Criptografar', 'Descriptografar'))
     key = st.text_input('Senha', '')
@@ -40,7 +40,7 @@ with st.expander("Cripitografia Simples - Menos Seguro"):
             st.text("Texto Descriptografado")
             st.text_area("",decoded (key,string))
 
-with st.expander("Cripitografia Complexa - Mais Seguro"):
+with st.expander("Cripitografia Senha aleatória - Mais Seguro"):
 
     if st.button('Criptografar'):
         key1 = st.text_input('Senha ', hash ())
