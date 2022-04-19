@@ -11,22 +11,22 @@ def decoded (key,string):
 
 
 st.set_page_config(
-     page_title="Encode e Decode",
+     page_title="Criptografar e Descriptografar",
      page_icon="lock"
  )
 
 
 st.title('Encode e Decode')
 
-option = st.radio("Selecione a opção: ",('Encode', 'Decode'))
+option = st.radio("Selecione a opção: ",('Criptografar', 'Descriptografar'))
 
 key = st.text_input('Chave', '')
 string = st.text_input('Texto', '')
 
 if st.button('Rodar'):
-    if option == 'Encode' :
+    if option == 'Criptografar' :
         st.text(option)
         st.text(encoded (key,string))
-    if option == 'Decode' :
+    if option == 'Descriptografar' :
         st.text(option)
         st.text(decoded (key,string))
