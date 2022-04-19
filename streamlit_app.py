@@ -16,7 +16,7 @@ st.set_page_config(
  )
 
 
-st.title('Encode e Decode')
+st.title('Criptografar e Descriptografar')
 
 option = st.radio("Selecione a opção: ",('Criptografar', 'Descriptografar'))
 
