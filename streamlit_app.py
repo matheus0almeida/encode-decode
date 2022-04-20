@@ -1,7 +1,6 @@
 import cryptocode
 import streamlit as st
 from datetime import datetime,date
-import time
 import hashlib
 
 def encoded (key,string):
@@ -18,19 +17,27 @@ def hash ():
     crypto = hashlib.sha256(s_today.encode('utf-8')).hexdigest()
     return (crypto)
 
+def clear_text():
+    st.session_state["text"] = ""
+
 st.set_page_config(
      page_title="Criptografar e Descriptografar",
      page_icon="lock"
  )
-
+value = " "
 
 st.title('Criptografar e Descriptografar')
 
+with st.sidebar:
+    st.write("")
+    option = st.radio("Selecione a opção: ",('Criptografar', 'Descriptografar'))
+    st.button("Limpar", on_click=clear_text)
+
+
 with st.expander("Cripitografia Senha definida - Menos Seguro"):
 
-    option = st.radio("Selecione a opção: ",('Criptografar', 'Descriptografar'))
-    key = st.text_input('Senha', '')
-    string = st.text_input('Texto', '')
+    key = st.text_input('Senha', key="text")
+    string = st.text_input('Texto', key="text")
 
     if st.button('Rodar'):
         if option == 'Criptografar' :
@@ -42,16 +49,16 @@ with st.expander("Cripitografia Senha definida - Menos Seguro"):
 
 with st.expander("Cripitografia Senha aleatória - Mais Seguro"):
 
-    if st.button('Criptografar'):
+    if option == 'Criptografar' :
         key1 = st.text_input('Senha ', hash ())
-        string1 = st.text_input('Texto ', '')
+        string1 = st.text_input('Texto ', key="text")
         if st.button('Rodar '):
             st.text("Texto Criptografado")
             st.text_area("",encoded (key1,string1))
 
-    if st.button('Descriptografar'):
-        key1 = st.text_input('Senha ', '')
-        string1 = st.text_input('Texto ', '')
+    if option == 'Descriptografar' :
+        key1 = st.text_input('Senha ', key="text")
+        string1 = st.text_input('Texto ', key="text")
         if st.button('Rodar  '):
             st.text("Texto Descriptografado")
             st.text_area("",decoded (key1,string1))
