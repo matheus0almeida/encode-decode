@@ -26,7 +26,7 @@ st.set_page_config(
      page_icon="lock",
      layout="wide",
  )
-
+option = 1
 st.title('Criptografar e Descriptografar')
 
 with st.sidebar:
