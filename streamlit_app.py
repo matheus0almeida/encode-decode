@@ -27,7 +27,7 @@ st.set_page_config(
      layout="wide",
  )
 option = 1
-st.title('Criptografar e Descriptografar')
+st.title('Criptografar e Descriptografar :)')
 
 with st.sidebar:
     st.subheader('Opções:')
